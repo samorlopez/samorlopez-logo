@@ -42,7 +42,7 @@ function animate() {
 let glbModel = null; // Store reference to the loaded GLB model
 
 const gltfLoader = new GLTFLoader();
-gltfLoader.load('/samorlopez_v8.glb', (gltf) => {
+gltfLoader.load('samorlopez_v8.glb', (gltf) => {
   // Remove previous model if it exists
   if (glbModel) {
     scene.remove(glbModel);
