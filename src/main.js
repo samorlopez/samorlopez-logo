@@ -15,10 +15,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 scene.background = null; // Make background transparent
 
-var camY = 42;
-
 // Set camera position and orientation
-camera.position.set(0, camY, 0);
+camera.position.set(0, 42, 0);
 camera.rotation.set(-Math.PI / 2, 0, 0);
 
 const pointLight = new THREE.PointLight(0xffffff, 1000);
@@ -79,10 +77,10 @@ window.addEventListener('resize', () => {
   renderer.setPixelRatio(window.devicePixelRatio);
 
   if (window.innerWidth > 1440) {
-    camY = 50;
+    camera.position.set(0, 50, 0);
   }
   else {
-    camY = 42;
+    camera.position.set(0, 42, 0);
   }
 
   // Scale the GLB object based on viewport size
