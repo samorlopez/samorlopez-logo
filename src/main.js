@@ -15,7 +15,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 scene.background = null; // Make background transparent
 
-var camY = 45;
+var camY = 42;
 
 // Set camera position and orientation
 camera.position.set(0, camY, 0);
@@ -82,7 +82,7 @@ window.addEventListener('resize', () => {
     camY = 50;
   }
   else {
-    camY = 45;
+    camY = 42;
   }
 
   // Scale the GLB object based on viewport size
