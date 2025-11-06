@@ -15,8 +15,10 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 scene.background = null; // Make background transparent
 
+var camY = 45;
+
 // Set camera position and orientation
-camera.position.set(0, 50, 0);
+camera.position.set(0, camY, 0);
 camera.rotation.set(-Math.PI / 2, 0, 0);
 
 const pointLight = new THREE.PointLight(0xffffff, 1000);
@@ -42,7 +44,7 @@ function animate() {
 let glbModel = null; // Store reference to the loaded GLB model
 
 const gltfLoader = new GLTFLoader();
-gltfLoader.load('samorlopez_v8.glb', (gltf) => {
+gltfLoader.load('https://samorlopez.github.io/samorlopez-logo/samorlopez_v8.glb', (gltf) => {
   // Remove previous model if it exists
   if (glbModel) {
     scene.remove(glbModel);
@@ -75,6 +77,13 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
+
+  if (window.innerWidth > 1440) {
+    camY = 50;
+  }
+  else {
+    camY = 45;
+  }
 
   // Scale the GLB object based on viewport size
   if (glbModel) {
