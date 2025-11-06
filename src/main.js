@@ -16,7 +16,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 scene.background = null; // Make background transparent
 
 // Set camera position and orientation
-camera.position.set(0, 42, 0);
+if (window.innerWidth > 1440) {
+  camera.position.set(0, 50, 0);
+}
+else {
+  camera.position.set(0, 42, 0);
+}
 camera.rotation.set(-Math.PI / 2, 0, 0);
 
 const pointLight = new THREE.PointLight(0xffffff, 1000);
@@ -75,13 +80,6 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
-
-  if (window.innerWidth > 1440) {
-    camera.position.set(0, 50, 0);
-  }
-  else {
-    camera.position.set(0, 42, 0);
-  }
 
   // Scale the GLB object based on viewport size
   if (glbModel) {
