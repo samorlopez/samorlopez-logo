@@ -16,7 +16,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 scene.background = null; // Make background transparent
 
 // Set camera position and orientation
-camera.position.set(0, 44, 0);
+camera.position.set(0, 50, 0);
 camera.rotation.set(-Math.PI / 2, 0, 0);
 
 const pointLight = new THREE.PointLight(0xffffff, 1000);
