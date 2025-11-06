@@ -16,7 +16,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 scene.background = null; // Make background transparent
 
 // Set camera position and orientation
-if (window.innerWidth > 1440) {
+if (window.screen.width > 1664) {
   camera.position.set(0, 50, 0);
 }
 else {
